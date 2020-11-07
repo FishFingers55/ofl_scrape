@@ -56,5 +56,3 @@ while True:
         cheap_desk = desk_price
     if table_price < cheap_table:
         cheap_table = table_price
-
-    time.sleep(86400)
