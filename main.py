@@ -6,7 +6,7 @@ import smtplib
 import time
 
 
-cheap_desk = 329.99
+cheap_desk = 294.99
 cheap_table = 124.99
 EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASS = os.environ.get("EMAIL_PASS")
