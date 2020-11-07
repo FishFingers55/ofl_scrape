@@ -4,12 +4,12 @@ from decimal import Decimal
 import os
 import smtplib
 import time
+from boto.s3.connection import S3Connection
 
 
 cheap_desk = 294.99
 cheap_table = 124.99
-EMAIL_USER = os.getenv("EMAIL_USER")
-EMAIL_PASS = os.environ.get("EMAIL_PASS")
+s3 = S3Connection(os.environ["EMAIL_USER"], os.environ["EMAIL_PASS"])
 
 def find(soup):
     p = soup.find("p", class_="main-price")
