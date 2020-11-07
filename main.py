@@ -37,19 +37,19 @@ def send_mail():
 
     server.quit()
 
-desk_source = requests.get("https://www.oakfurnitureland.co.uk/furniture/bevel-natural-solid-oak-computer-desk/1453.html").text
-table_source = requests.get("https://www.oakfurnitureland.co.uk/furniture/bevel-natural-solid-oak-2-drawer-bedside-table/1440.html").text
-
-desk_soup = BeautifulSoup(desk_source, "lxml")
-table_soup = BeautifulSoup(table_source, "lxml")
-
-desk_price = find(desk_soup)
-table_price = find(table_soup)
-
-desk_price = remove_pound(desk_price)
-table_price = remove_pound(table_price)
-
 while True:
+    desk_source = requests.get("https://www.oakfurnitureland.co.uk/furniture/bevel-natural-solid-oak-computer-desk/1453.html").text
+    table_source = requests.get("https://www.oakfurnitureland.co.uk/furniture/bevel-natural-solid-oak-2-drawer-bedside-table/1440.html").text
+
+    desk_soup = BeautifulSoup(desk_source, "lxml")
+    table_soup = BeautifulSoup(table_source, "lxml")
+
+    desk_price = find(desk_soup)
+    table_price = find(table_soup)
+
+    desk_price = remove_pound(desk_price)
+    table_price = remove_pound(table_price)
+
     if desk_price < cheap_desk or table_price < cheap_table:
         send_mail()
     if desk_price < cheap_desk:
