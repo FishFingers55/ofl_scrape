@@ -24,7 +24,7 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login("pshearer65@gmail.com", "cjvqakfunlsjaxxl")
+    server.login(EMAIL_USER, EMAIL_PASS)
 
     subject = "Oak Furniture Land Prices Dropped"
     body = """Check oak furniture land prices. They have dropped!
@@ -33,7 +33,7 @@ def send_mail():
 
     msg = f"Subject: {subject}\n\n{body}"
 
-    server.sendmail("pshearer65@gmail.com", "pshearer65@gmail.com", msg)
+    server.sendmail(EMAIL_USER, EMAIL_USER, msg)
 
     server.quit()
 
